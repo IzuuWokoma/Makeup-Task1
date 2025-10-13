@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowTouch Makeup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff5f8;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      color: #e91e63;
+    }
+    .card {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>GlowTouch Makeup 💄</h1>
+  <p id="brandInfo"></p>
+  <div class="card" id="productList"></div>
+
+  <script>
+    // Variables
+    let brandName = "GlowTouch";
+    let yearFounded = 2024;
+    let isVeganFriendly = true;
+
+    // Function
+    function brandGreeting(name) {
+      return `Welcome to ${name} — where beauty meets confidence!`;
+    }
+
+    // Object
+    const brandDetails = {
+      name: brandName,
+      yearFounded,
+      isVeganFriendly
+    };
+
+    // Array of products
+    const products = ["Lip Gloss", "Foundation", "Mascara", "Blush", "Highlighter"];
+
+    // Output info
+    let info = `<strong>${brandGreeting(brandDetails.name)}</strong><br>`;
+    info += `Founded in ${brandDetails.yearFounded}.<br>`;
+    info += `Vegan Friendly: ${brandDetails.isVeganFriendly}`;
+
+    // Display brand info
+    document.getElementById("brandInfo").innerHTML = info;
+
+    // Loop through products
+    let list = "<h3>Our Products:</h3><ul>";
+    for (let item of products) {
+      list += `<li>${item}</li>`;
+    }
+    list += "</ul>";
+
+    document.getElementById("productList").innerHTML = list;
+  </script>
+</body>
+</html>
